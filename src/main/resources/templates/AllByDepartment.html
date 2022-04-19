@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All by department VAS</title>
+    <link th:href="@{/styles/cssandjs/bootstrap.min.css}" rel="stylesheet"/>
+
+</head>
+<body>
+<h1>Hello world from dep</h1>
+<section class="AllActualInformation">
+    <h3>Работы на сегодня</h3>
+    <table class="table table-md table-bordered">
+        <tr>
+            <th>name</th>
+            <th>surname</th>
+            <th>salary</th>
+            <th>action</th>
+        </tr>
+        <div th:each="el:${Department}" class="editInformation">
+            <tr>
+                <td th:text="${el.name}">test</td>
+                <td th:text="${el.surname}">test</td>
+                <td th:text="${el.salary}">test</td>
+                <td>
+                    <a th:href="@{deleteEmployee/__${el.id}__}" class="btn btn-danger btn-xs">Delete</a>
+                </td>
+            </tr>
+        </div>
+    </table>
+</section>
+<a th:href="@{/}" class="btn btn-outline-success btn-sm">Exit</a>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Новая запись</title>
+    <link th:href="@{/styles/cssandjs/bootstrap.min.css}" rel="stylesheet"/>
+
+
+</head>
+<body>
+<form th:action="@{/AddNew}" th:object="${employee}" method="post">
+    <div class="form-row">
+        <div class="col-3">
+            <!--    <lable for="name" class="col-sm-2 col-form-label">Имя</lable>-->
+            <input type="text" th:field="*{name}" id="name" class="form-control" placeholder="Имя">
+        </div>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="col-3">
+            <input type="text" th:field="*{surname}" id="surname" class="form-control" placeholder="Фамилия">
+        </div>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="col-3">
+            <!--    <lable for="name">Department</lable>-->
+            <input type="text" th:field="*{department}" id="department" class="form-control" placeholder="Департамент">
+        </div>
+    </div>
+    <br>
+    <div class="form-row">
+        <div class="col-3">
+            <input type="text" th:field="*{salary}" id="salary" class="form-control" placeholder="ЗП">
+        </div>
+    </div>
+    <br>
+    <input type="submit" value="Create" class="btn btn-primary">
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link th:href="@{/styles/cssandjs/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/cssandjs/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<header th:insert="${header} ?: ~{}">
+
+</header>
+<p>Find all Employee <a href="/allinfo">here</a></p>
+<p>Find all Employee First New <a href="/allinfoDesc">here</a></p>
+<a href="/allinfo"/>
+<p>AddNew <a href="/new">here</a></p>
+<div class="container mt-5">
+    <form method="post" action="/ByDepartment">
+        <lable for="department">Department</lable>
+        <input name="department" type="text" id="department" placeholder="Введите название департамента"
+               class="form-control"><br>
+        <input type="submit" class="btn btn-success" value="By Department's">
+    </form>
+</div>
+</body>
+</html>
