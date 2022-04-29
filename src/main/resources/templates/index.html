@@ -12,8 +12,11 @@
 </header>
 <p>Find all Employee <a href="/allinfo">here</a></p>
 <p>Find all Employee First New <a href="/allinfoDesc">here</a></p>
-<a href="/allinfo"/>
+
 <p>AddNew <a href="/new">here</a></p>
+<div style="margin: 10px"
+     th:text="'Logged in as: '+${Name}">
+</div>
 <div class="container mt-5">
     <form method="post" action="/ByDepartment">
         <lable for="department">Department</lable>
@@ -22,5 +25,6 @@
         <input type="submit" class="btn btn-success" value="By Department's">
     </form>
 </div>
+<a th:href="@{/logout}" class="btn btn-primary">Logout</a>
 </body>
 </html>

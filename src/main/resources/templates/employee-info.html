@@ -8,12 +8,11 @@
 
 </head>
 <body>
+<div style="margin: 10px"
+     th:text="'Your Name: '+${LoginName}">
+</div>
 <form th:action="@{/AddNew}" th:object="${employee}" method="post">
     <div class="form-row">
-        <div class="col-3">
-            <!--    <lable for="name" class="col-sm-2 col-form-label">Имя</lable>-->
-            <input type="text" th:field="*{name}" id="name" class="form-control" placeholder="Имя">
-        </div>
     </div>
     <br>
     <div class="form-row">
