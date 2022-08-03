@@ -23,7 +23,7 @@ public class MyController {
         return "index.html";
     }
 
-
+// Test pull in new branch
     @GetMapping("/allinfo")
     public String ViewInformation(Principal principal, Model model) {
         List<Employee> Employee = employeeService.getAllEmployees();
