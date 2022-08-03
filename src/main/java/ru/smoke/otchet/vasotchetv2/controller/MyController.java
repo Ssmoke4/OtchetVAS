@@ -1,5 +1,6 @@
 package ru.smoke.otchet.vasotchetv2.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Controller
 public class MyController {
+    private static final Logger logger = Logger.getLogger(MyController.class);
     @Autowired
     private EmployeeService employeeService;
 
@@ -24,9 +26,11 @@ public class MyController {
 
     @GetMapping("/allinfo")
     public String ViewInformation(Principal principal, Model model) {
-        Iterable<Employee> Employee = employeeService.getAllEmployees();
+        List<Employee> Employee = employeeService.getAllEmployees();
+        logger.info("Запрос списка Записей");
         model.addAttribute("Employees", Employee);
-        model.addAttribute("Name", principal.getName());
+//        model.addAttribute("Employees", Employee);
+//        model.addAttribute("Name", principal.getName());
         return "info2";
     }
     @RequestMapping("/new")

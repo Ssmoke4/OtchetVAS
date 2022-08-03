@@ -24,12 +24,12 @@ public class MysecurityInitializer extends WebSecurityConfigurerAdapter {
     public UserDetailsService users(){
         UserDetails user = User.builder()
                 .username("smoke")
-                .password("{bcrypt}$2a$12$VrXHSSUP.HySGoQw0MgSW.aJb9gLTwgclLOsuSKTEoHgC9znyxRpi")
+                .password("{bcrypt}$2a$12$T8I01tI4t6/J2sCgDu0TX.R1DhCZwnRXhEZ.l4yx0aZYFQYDviwcW")
                 .roles("USER")
                 .build();
         UserDetails admin = User.builder()
                 .username("admin")
-                .password("{bcrypt}$2a$12$VrXHSSUP.HySGoQw0MgSW.aJb9gLTwgclLOsuSKTEoHgC9znyxRpi")
+                .password("{bcrypt}$2a$12$tPiZIbinXf.CRryYTUm/z.kx4dJ2jl9ggav3D2.rEAjdEsPA8sIHW")
                 .roles("ADMIN","USER")
                 .build();
         return new InMemoryUserDetailsManager(user, admin);
